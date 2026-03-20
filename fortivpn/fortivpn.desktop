@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Fortivpn
+Comment=Start openfortivpn
+Exec=env SUDO_ASKPASS=/usr/bin/ksshaskpass /usr/local/bin/termtray -title fortivpn -icon network-vpn -- /usr/bin/sudo -A /usr/local/bin/fortivpn.sh
+Icon=network-vpn
+Terminal=false
+Categories=Utility
+StartupNotify=true

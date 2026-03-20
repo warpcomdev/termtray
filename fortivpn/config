@@ -1,0 +1,8 @@
+host = FORTINET_SERVER
+port = FORTINET_PORT
+username = USERNAME
+realm = REALM
+user-cert = /root/.ssh/fortivpn_crt.pem
+user-key = /roo/.ssh/fortivpn_key.pem
+trusted-cert = CERTIFICATE_FINGERPRINT
+set-dns = 1
