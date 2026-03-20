@@ -16,7 +16,7 @@ The app icon lives in [assets/icons/termtray.svg](/home/rafa/projects/termtray/a
 - CRT-style green terminal output by default
 - Configurable foreground color with `-color RGB`
 - Configurable tray/window title with `-title TEXT`
-- Configurable tray/window icon with `-icon PATH`
+- Configurable tray/window icon with `-icon NAME`
 - Scrollback buffer of 200 lines
 - Close-to-tray behavior when the desktop supports a tray
 - Tray menu to restore the window after it has been hidden
@@ -51,7 +51,7 @@ The resulting binary is `./termtray`.
 ## Usage
 
 ```bash
-termtray [-color RGB] [-title TEXT] [-icon PATH] -- <command> [args...]
+termtray [-color RGB] [-title TEXT] [-icon NAME] -- <command> [args...]
 ```
 
 Examples:
@@ -59,7 +59,7 @@ Examples:
 ```bash
 ./termtray -- bash -lc 'echo hello; echo error >&2; sleep 2; echo done'
 ./termtray -color 6f6 -- tail -f /var/log/syslog
-./termtray -title "VPN Monitor" -icon /usr/share/icons/hicolor/scalable/apps/utilities-terminal.svg -- ./fortivpn/fortivpn.sh
+./termtray -title "VPN Monitor" -icon network-vpn -- ./fortivpn/fortivpn.sh
 ```
 
 For a real life example, see [fortivpn/README.md](./fortivpn/README.md)
@@ -84,8 +84,8 @@ Each digit uses the range `0` to `f` and is expanded to a full 8-bit channel int
 ## Title And Icon Flags
 
 - `-title TEXT` changes the main window title and the tray tooltip text
-- `-icon PATH` uses the specified icon file for the window and tray icon
-- if `-icon` points to a path that does not exist, `termtray` falls back to its bundled icon, and then to the `utilities-terminal` theme icon
+- `-icon NAME` uses the named icon from the current icon theme for the window and tray icon
+- if the requested theme icon is unavailable, `termtray` falls back to its bundled icon, and then to the `utilities-terminal` theme icon
 
 ## Tray Behavior
 
